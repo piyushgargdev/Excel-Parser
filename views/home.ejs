@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/header-scripts.ejs') %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Parser</title>
+</head>
+
+<body>
+  <nav class="bg-dark p-3 text-center text-white">
+    <h1>Excel Parser</h1>
+  </nav>
+
+  <div class="container mt-5">
+  <a href="/list" class="btn btn-primary my-3 btn-lg text-white">View All users</a>
+    <p>OR</p>
+    <form action="/api/upload-csv" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="excel-input">Select a CSV file</label>
+        <input accept=".csv" id="excel-input" type="file" name="excel-file" required>
+      </div>
+      <button class="btn btn-success" type="submit">Upload</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer-scripts.ejs') %>
+</body>
+
+</html>

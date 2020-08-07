@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/header-scripts.ejs') %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Parser</title>
+</head>
+
+<body>
+  <nav class="text-white bg-dark p-3 text-center">
+    <h1>List</nav>
+  </nav>
+  <div class="container mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((user, index) => { %>
+        <tr>
+          <th><%= index + 1 %> </th>
+          <td><%= user.name %> </td>
+          <td><%= user.email %> </td>
+          <td><%= user.mobile %> </td>
+          <td><%= user.gender %> </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <%- include('partials/footer-scripts.ejs') %>
+</body>
+
+</html>
